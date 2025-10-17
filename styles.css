@@ -1,0 +1,33 @@
+* { box-sizing: border-box; }
+html,body { height:100%; margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: radial-gradient(ellipse at top left, #2b0047 0%, #1b0030 50%, #0f0018 100%); color:#fff; }
+.page { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:30px; }
+.intro { text-align:center; margin-bottom:20px; }
+.intro h1 { font-size:2.2rem; margin:0; letter-spacing:0.5px; text-shadow: 0 6px 20px rgba(128,0,128,0.45); }
+.intro .subtitle { margin-top:6px; color:#e9d7ff; opacity:0.9; }
+
+.video-clip { width:min(920px,92vw); max-width:920px; border-radius:20px; padding:18px; background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); box-shadow: 0 8px 30px rgba(0,0,0,0.6); margin-bottom:20px; position:relative; overflow:hidden; }
+.slideshow { position:relative; width:100%; padding-top:56.25%; border-radius:14px; overflow:hidden; }
+.slideshow img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transform:scale(1.02); transition: opacity 1.6s ease, transform 1.6s ease; }
+.slideshow img.active { opacity:1; transform:scale(1); }
+
+.message { max-width:880px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:20px; border-radius:12px; color:#fff; line-height:1.6; box-shadow: 0 6px 20px rgba(0,0,0,0.4); }
+.message p { margin:0 0 14px 0; font-size:1.05rem; color:#f6eefe; }
+.quote { margin:10px 0 0 0; font-style:italic; color:#ffe9ff; border-left:3px solid rgba(255,255,255,0.08); padding-left:12px; }
+.signature { margin-top:16px; font-weight:600; color:#ffdff6; text-align:right; }
+
+.credits { margin-top:18px; opacity:0.8; color:#e8d8ff; }
+
+/* dreamy floating hearts (simple) */
+:root { --heart-size: 20px; }
+.heart { position:absolute; top:-10%; left:50%; width:var(--heart-size); height:var(--heart-size); background:transparent; transform:translateX(-50%); opacity:0; animation: floatUp 8s linear infinite; }
+@keyframes floatUp {
+  0% { transform:translate(-50%, 20vh) scale(0.6); opacity:0; }
+  10% { opacity:1; }
+  100% { transform:translate(-50%, -120vh) scale(1.4); opacity:0; }
+}
+
+/* responsive tweaks */
+@media (max-width:640px) {
+  .intro h1 { font-size:1.6rem; }
+  .message p { font-size:0.96rem; }
+}
